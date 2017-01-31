@@ -1,0 +1,30 @@
+{
+  "name": "react-native-stretchy",
+  "version": "0.1.1",
+  "description": "A ReactNative scrollable stretchy header component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamidhadi/react-native-stretchy.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "scrollview",
+    "stretchy",
+    "stretch-view",
+    "component"
+  ],
+  "author": "Hamid Hadi <hamidhadi@live.com> (https://github.com/hamidhadi)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hamidhadi/react-native-stretchy/issues"
+  },
+  "homepage": "https://github.com/hamidhadi/react-native-stretchy#readme",
+  "dependencies": {
+    "react-native-linear-gradient": "^2.0.0"
+  }
+}
