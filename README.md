@@ -1,6 +1,7 @@
 # react-native-stretchy
 A ReactNative scrollable stretchy header component
 
+![StretchyBatman](http://hamidhadi.com/wp-content/uploads/2017/04/StretchyBatman.gif)
 
 ## Installation
 
@@ -9,7 +10,7 @@ You can install this package via `npm`:
 ```bash
 npm install react-native-stretchy --save
 ```
-
+**NOTE**: Link [react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient) to your project.
 
 ## Usage
 
@@ -27,6 +28,7 @@ class MyStretchyHeader extends Component {
           subtitle= 'Awesome Subtitle'
           gradientColors={["#000", "transparent", "#000"]}
           backgroundColor="#EFEFF4"
+          onScroll={(position)=> {console.log(position)}}
       >
           <Text>Foo</Text>
           <Text>Bar</Text>
@@ -44,6 +46,7 @@ class MyStretchyHeader extends Component {
 * **subtitle**: The string subtitle of stretchy header
 * **gradientColors**: The array of string colors for stretchy header gradient overlay
 * **backgroundColor**: The background color of the inner content of the stretchy header
+* **onScroll**: A function that gets the position of the scroll
 
 
 ## Contribution
