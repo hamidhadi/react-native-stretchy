@@ -1,7 +1,7 @@
 # react-native-stretchy
 A ReactNative scrollable stretchy header component
 
-![StretchyBatman](http://hamidhadi.com/wp-content/uploads/2017/04/StretchyBatman.gif)
+![StretchyBatman](/demo.gif)
 
 ## Installation
 
