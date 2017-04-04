@@ -23,13 +23,11 @@ export default StyleSheet.create({
   },
   title: {
     color: '#FFF',
-    fontFamily: 'IRANSansWeb(NoEn)',
     fontWeight: 'bold',
     fontSize: 20
   },
-  subTitle: {
+  subtitle: {
     color: '#FFF',
-    fontFamily: 'IRANSansWeb(NoEn)',
     fontSize: 12
   }
 });
