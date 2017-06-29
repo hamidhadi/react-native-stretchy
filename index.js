@@ -5,9 +5,9 @@ import {
 	Image,
 	ScrollView,
 	Dimensions,
-	Animated
+	Animated,
 } from 'react-native';
-import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource'
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 import Styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -18,8 +18,8 @@ export default class StretchyHeader extends Component {
 		this.wWidth = Dimensions.get('window').width;
 		this.wHeight = Dimensions.get('window').height;
 		this.state = {
-				scaleAnim: new Animated.Value(1)
-				ratio: null,
+				scaleAnim: new Animated.Value(1),
+				ratio: null
 		};
 	}
 
