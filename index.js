@@ -25,7 +25,7 @@ export default class StretchyHeader extends Component {
 
 	componentWillMount() {
 		if (this.props.image.uri) {
-			Image.getSize(this.props.uri, (width, height) => {
+			Image.getSize(this.props.image.uri, (width, height) => {
 				this.setState({ ratio: width / height })
 			})
 		} else {
