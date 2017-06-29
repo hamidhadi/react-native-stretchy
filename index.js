@@ -7,6 +7,7 @@ import {
 	Dimensions,
 	Animated
 } from 'react-native';
+import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource'
 import Styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 
