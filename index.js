@@ -43,9 +43,10 @@ export default class StretchyHeader extends Component {
 	render() {
 		const { ratio } = this.state
 		const height = ratio > 1 ? this.wWidth / ratio : this.wWidth * ratio
+
 		return(
 			<View style={[Styles.container, {backgroundColor: this.props.backgroundColor || '#FFF'}]}>
-				<View style={[Styles.photoContainer, {height, width: this.wWidth}]}>
+				<View style={[Styles.photoContainer, {height}]}>
 					<Animated.Image
 						style={[Styles.photo, {
 							transform: [
