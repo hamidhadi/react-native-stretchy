@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
   container: {
@@ -9,8 +9,9 @@ export default StyleSheet.create({
     position: 'absolute'
   },
   photo: {
-    flex: 1,
-    resizeMode: 'cover'
+    width: Dimensions.get('window').width,
+    resizeMode: 'cover',
+    flex: 1
   },
   contentContainer: {
     backgroundColor: 'transparent'
