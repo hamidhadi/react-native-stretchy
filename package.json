@@ -1,6 +1,6 @@
 {
   "name": "react-native-stretchy",
-  "version": "0.3.0",
+  "version": "0.2.3",
   "description": "A ReactNative scrollable stretchy header component",
   "main": "index.js",
   "scripts": {
