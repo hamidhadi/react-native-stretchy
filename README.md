@@ -23,12 +23,14 @@ class MyStretchyHeader extends Component {
   render() {
     return (
       <StretchyHeader
-          image={{uri: 'https://example.com/myImageAddress'}}
+          image= {{uri: 'https://example.com/myImageAddress'}}
           title= 'My Stretchy Header Title'
+          titleStyle= {{color: 'red'}}
           subtitle= 'Awesome Subtitle'
-          gradientColors={["#000", "transparent", "#000"]}
-          backgroundColor="#EFEFF4"
-          onScroll={(position)=> {console.log(position)}}
+          subtitleStyle= {{color: 'blue'}}
+          gradientColors= {["#000", "transparent", "#000"]}
+          backgroundColor= "#EFEFF4"
+          onScroll= {(position)=> {console.log(position)}}
       >
           <Text>Foo</Text>
           <Text>Bar</Text>
@@ -43,7 +45,9 @@ class MyStretchyHeader extends Component {
 
 * **image**: The image of the stretchy header ([RN image source](https://facebook.github.io/react-native/docs/images.html))
 * **title**: The string title of stretchy header
+* **titleStyle**: Standard RN style object for the title
 * **subtitle**: The string subtitle of stretchy header
+* **subtitleStyle**: Standard RN style object for the subtitle
 * **gradientColors**: The array of string colors for stretchy header gradient overlay
 * **backgroundColor**: The background color of the inner content of the stretchy header
 * **onScroll**: A function that gets the position of the scroll

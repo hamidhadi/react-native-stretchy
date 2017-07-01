@@ -26,11 +26,11 @@ export default class StretchyHeader extends Component {
 	componentWillMount() {
 		if (this.props.image.uri) {
 			Image.getSize(this.props.image.uri, (width, height) => {
-				this.setState({ ratio: width / height })
-			})
+				this.setState({ ratio: width / height });
+			});
 		} else {
-			const { width, height } = resolveAssetSource(this.props.image)
-			this.setState({ ratio: width / height })
+			const { width, height } = resolveAssetSource(this.props.image);
+			this.setState({ ratio: width / height });
 		}
 	}
 
@@ -41,8 +41,8 @@ export default class StretchyHeader extends Component {
 	}
 
 	render() {
-		const { ratio } = this.state
-		const height = ratio > 1 ? this.wWidth / ratio : this.wWidth * ratio
+		const { ratio } = this.state;
+		const height = ratio > 1 ? this.wWidth / ratio : this.wWidth * ratio;
 
 		return(
 			<View style={[Styles.container, {backgroundColor: this.props.backgroundColor || '#FFF'}]}>
@@ -78,8 +78,8 @@ export default class StretchyHeader extends Component {
 					}
 					>
 					<View style={[Styles.headerContainer, {height}]}>
-							<Text style={Styles.title}>{this.props.title}</Text>
-							<Text style={Styles.subtitle}>{this.props.subtitle}</Text>
+							<Text style={[Styles.title, this.props.titleStyle]}>{this.props.title}</Text>
+							<Text style={[Styles.subtitle, this.props.subtitleStyle]}>{this.props.subtitle}</Text>
 					</View>
 					<View style={{backgroundColor: this.props.backgroundColor || '#FFF', minHeight: this.wHeight - height}}>
 							{this.props.children}
