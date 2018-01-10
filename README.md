@@ -5,14 +5,19 @@ A ReactNative scrollable stretchy header component
 
 ## Installation
 
-You can install this package via `npm`:
+You can install this package via `yarn`:
+```bash
+yarn add react-native-stretchy --save
+```
+
+or `npm`
 
 ```bash
 npm install react-native-stretchy --save
 ```
 **NOTE**: Link [react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient) to your project.
 
-## Usage
+## Basic Usage
 
 ```js
 import React, { Component } from 'react';
@@ -23,14 +28,9 @@ class MyStretchyHeader extends Component {
   render() {
     return (
       <StretchyHeader
-          image= {{uri: 'https://example.com/myImageAddress'}}
-          title= 'My Stretchy Header Title'
-          titleStyle= {{color: 'red'}}
-          subtitle= 'Awesome Subtitle'
-          subtitleStyle= {{color: 'blue'}}
-          gradientColors= {["#000", "transparent", "#000"]}
-          backgroundColor= "#EFEFF4"
-          onScroll= {(position)=> {console.log(position)}}
+          image={{uri: 'https://example.com/myImageAddress'}}
+          gradientColors={["#000", "transparent", "#000"]}
+          onScroll={position => console.log(position)}
       >
           <Text>Foo</Text>
           <Text>Bar</Text>
@@ -41,17 +41,22 @@ class MyStretchyHeader extends Component {
 ```
 
 
-### Properties
+## Properties
 
-* **image**: The image of the stretchy header ([RN image source](https://facebook.github.io/react-native/docs/images.html))
-* **title**: The string title of stretchy header
-* **titleStyle**: Standard RN style object for the title
-* **subtitle**: The string subtitle of stretchy header
-* **subtitleStyle**: Standard RN style object for the subtitle
-* **gradientColors**: The array of string colors for stretchy header gradient overlay
-* **backgroundColor**: The background color of the inner content of the stretchy header
-* **onScroll**: A function that gets the position of the scroll
+| Prop          | Default | Description|
+|---------------|:-------:|------------|
+|backgroundColor|`#FFF`     | Background color of the inner content
+|image          |`null`     |The image of the stretchy header ([RN image source](https://facebook.github.io/react-native/docs/images.html))
+|gradientColors |`[]`       |The array of string colors for gradient
+|foreground     |`null`     |A RN Component for foreground content of background
+|onScroll       |`null`     |A function that gets the position of the scroll
 
+### Additional props of gradient are also available
+| Prop            | Default |
+|-----------------|:-------:|
+|gradientStart    |null     |
+|gradientEnd      |null     |
+|gradientLocations|null     |
 
 ## Contribution
 

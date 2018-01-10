@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/hamidhadi/react-native-stretchy#readme",
   "dependencies": {
-    "react-native-linear-gradient": "^2.0.0"
+    "react-native-linear-gradient": "^2.4.0"
   }
 }
