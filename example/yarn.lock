@@ -3520,6 +3520,12 @@ react-native-linear-gradient@^2.4.0:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-stretchy@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-stretchy/-/react-native-stretchy-1.0.0.tgz#3ec1bf1a826fbe2834dde64e8464781fde534485"
+  dependencies:
+    react-native-linear-gradient "^2.4.0"
+
 react-native@0.52.0:
   version "0.52.0"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.52.0.tgz#9784663a2aa40b30c87d4c9c06ef26cf8d419d91"

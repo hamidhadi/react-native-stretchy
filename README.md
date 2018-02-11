@@ -7,7 +7,7 @@ A ReactNative scrollable stretchy header component
 
 You can install this package via `yarn`:
 ```bash
-yarn add react-native-stretchy --save
+yarn add react-native-stretchy
 ```
 
 or `npm`
@@ -30,7 +30,7 @@ class MyStretchyHeader extends Component {
       <StretchyHeader
           image={{uri: 'https://example.com/myImageAddress'}}
           gradientColors={["#000", "transparent", "#000"]}
-          onScroll={position => console.log(position)}
+          onScroll={(position, scrollReachesToBottomOfHeader) => console.log(position, scrollReachesToBottomOfHeader)}
       >
           <Text>Foo</Text>
           <Text>Bar</Text>
@@ -47,9 +47,11 @@ class MyStretchyHeader extends Component {
 |---------------|:-------:|------------|
 |backgroundColor|`#FFF`     | Background color of the inner content
 |image          |`null`     |The image of the stretchy header ([RN image source](https://facebook.github.io/react-native/docs/images.html))
+|imageHeight    |`null`     |Height of the stretchy header image (keep ratio of `image` if not provided)
+|imageResizeMode|`'cover'`    | ResizeMode of the stretchy header image. [You can use one of these values](https://facebook.github.io/react-native/docs/image.html#resizemode)
 |gradientColors |`[]`       |The array of string colors for gradient
 |foreground     |`null`     |A RN Component for foreground content of background
-|onScroll       |`null`     |A function that gets the position of the scroll
+|onScroll       |`null`     |A callback function with these arguments:<br>`position`: current position of scroll<br>`scrollReachesToBottomOfHeader`: boolean flag for detecting scroll reaches to bottom of header or not
 
 ### Additional props of gradient are also available
 | Prop            | Default |

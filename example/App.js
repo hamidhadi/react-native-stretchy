@@ -1,17 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
   StatusBar
-} from 'react-native';
+} from 'react-native'
 
 import StretchyHeader from 'react-native-stretchy'
 
@@ -24,16 +17,15 @@ const ForegroundComponent = () => {
   )
 }
 
-export default class App extends Component<{}> {
-
-  render() {
+export default class App extends Component {
+  render () {
     return (
       <StretchyHeader
         image={require('./asset/batman.jpg')}
         gradientColors={['rgba(0, 0, 0, 0.9)', 'rgba(0, 0, 0, 0.5)', 'rgba(0, 0, 0, 0.9)']}
         foreground={ForegroundComponent()}
         backgroundColor='#EFEFF4'
-        onScroll={position => console.log(position)}
+        onScroll={(position, scrollReachesToBottomOfHeader) => console.log(position, scrollReachesToBottomOfHeader)}
       >
         <StatusBar barStyle={'light-content'} />
         <Text style={{padding: 10}}>
@@ -47,7 +39,7 @@ export default class App extends Component<{}> {
           Batman's secret identity is Bruce Wayne, a wealthy American playboy, philanthropist, and owner of Wayne Enterprises. After witnessing the murder of his parents Thomas Wayne and Martha Wayne as a child, he swore vengeance against criminals, an oath tempered by a sense of justice. Wayne trains himself physically and intellectually and crafts a bat-inspired persona to fight crime.[7] Batman operates in the fictional Gotham City, with assistance from various supporting characters, including his butler Alfred, police commissioner Gordon, and vigilante allies such as Robin. Unlike most superheroes, Batman does not possess any superpowers; rather, he relies on his genius intellect, physical prowess, martial arts abilities, detective skills, science and technology, vast wealth, intimidation, and indomitable will. A large assortment of villains make up Batman's rogues gallery, including his archenemy, the Joker.
         </Text>
       </StretchyHeader>
-    );
+    )
   }
 }
 
@@ -56,17 +48,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    margin: 10
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginBottom: 5
   },
   foregroundContainer: {
     flex: 1,
@@ -82,4 +74,4 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 12
   }
-});
+})

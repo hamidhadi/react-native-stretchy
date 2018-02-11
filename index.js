@@ -26,20 +26,31 @@ export default class StretchyHeader extends Component {
     }
   }
 
+  onScroll (value) {
+    const { onScroll } = this.props
+
+    this.imageWrapper.measure((ox, oy, width, height, px, py) => {
+      let scrollReachesToBottomOfHeader = value >= height
+      onScroll(value, scrollReachesToBottomOfHeader)
+    })
+  }
+
   componentWillMount () {
-    if (this.props.image.uri) {
-      Image.getSize(this.props.image.uri, (width, height) => {
+    const { image } = this.props
+
+    if (image.uri) {
+      Image.getSize(image.uri, (width, height) => {
         this.setState({ ratio: width / height })
       })
     } else {
-      const { width, height } = resolveAssetSource(this.props.image)
+      const { width, height } = resolveAssetSource(image)
       this.setState({ ratio: width / height })
     }
   }
 
   componentDidMount () {
     if (this.props.onScroll) {
-      this.state.scaleAnimation.addListener(({ value }) => this.props.onScroll(value))
+      this.state.scaleAnimation.addListener(({ value }) => this.onScroll(value))
     }
   }
 
@@ -47,6 +58,8 @@ export default class StretchyHeader extends Component {
     const {
       backgroundColor,
       image,
+      imageHeight,
+      imageResizeMode,
       foreground,
       gradientColors,
       gradientStart,
@@ -55,13 +68,17 @@ export default class StretchyHeader extends Component {
       children
     } = this.props
     const { ratio } = this.state
-    const height = ratio > 1 ? this.wWidth / ratio : this.wWidth * ratio
+    const height = imageHeight || (ratio > 1 ? this.wWidth / ratio : this.wWidth * ratio)
 
     return (
       <View style={[Styles.container, {backgroundColor}]}>
-        <View style={[Styles.photoContainer, {height}]}>
+        <View
+          style={[Styles.photoContainer, {height}]}
+          ref={me => { this.imageWrapper = me }}
+        >
           <AnimatedImageBackground
             source={image}
+            resizeMode={imageResizeMode}
             style={[Styles.photo, {
               transform: [
                 {
@@ -99,7 +116,7 @@ export default class StretchyHeader extends Component {
           <View style={[Styles.foregroundContainer, {height}]}>
             {foreground}
           </View>
-          <View style={{backgroundColor: backgroundColor, minHeight: this.wHeight - height}}>
+          <View style={{backgroundColor, minHeight: this.wHeight - height}}>
             {children}
           </View>
         </ScrollView>
@@ -111,6 +128,8 @@ export default class StretchyHeader extends Component {
 StretchyHeader.propTypes = {
   backgroundColor: PropTypes.string,
   image: PropTypes.node,
+  imageHeight: PropTypes.number,
+  imageResizeMode: PropTypes.oneOf(['cover', 'contain', 'stretch', 'repeat']),
   gradientColors: PropTypes.array,
   gradientStart: PropTypes.object,
   gradientEnd: PropTypes.object,
@@ -122,6 +141,8 @@ StretchyHeader.propTypes = {
 StretchyHeader.defaultProps = {
   backgroundColor: '#FFF',
   image: null,
+  imageHeight: null,
+  imageResizeMode: 'cover',
   gradientColors: [],
   gradientStart: null,
   gradientEnd: null,
