@@ -3530,9 +3530,9 @@ react-native-navigation@^1.1.428:
   dependencies:
     lodash "4.x.x"
 
-react-native-stretchy@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-stretchy/-/react-native-stretchy-1.0.0.tgz#3ec1bf1a826fbe2834dde64e8464781fde534485"
+react-native-stretchy@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-stretchy/-/react-native-stretchy-2.0.0.tgz#050151844c632b05cf63e224eb44ffa772c2b31c"
   dependencies:
     react-native-linear-gradient "^2.4.0"
 
