@@ -1,5 +1,5 @@
 # react-native-stretchy
-A ReactNative scrollable stretchy header component
+A ReactNative scrollable stretchy header component fully optimized for lists
 
 ![StretchyBatman](/demo.gif)
 
@@ -22,7 +22,7 @@ npm install react-native-stretchy --save
 ```js
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import StretchyHeader from 'react-native-stretchy';
+import { StretchyHeader } from 'react-native-stretchy';
 
 class MyStretchyHeader extends Component {
   render() {
@@ -42,6 +42,7 @@ class MyStretchyHeader extends Component {
 
 
 ## Properties
+These are default properties that is available for all stretchy components
 
 | Prop          | Default | Description|
 |---------------|:-------:|------------|
@@ -59,6 +60,18 @@ class MyStretchyHeader extends Component {
 |gradientStart    |null     |
 |gradientEnd      |null     |
 |gradientLocations|null     |
+
+## Components
+### <b>StretchyHeader</b>
+Simple ScrollView with stretchy header support. 
+### <b>StretchyFlatList</b>
+If you want to use FlatList component with stretchy header support, you can use this component instead of StretchyHeader for better rendering and performance.<br>
+
+### <b>StretchySectionList</b>
+If you want to use FlatList component with stretchy header support, you can use this component instead of StretchyHeader for better rendering and performance.<br>
+
+<i>NOTE: In addition to default stretchy props, you can use all available default props of React-Native FlatList and SectionList for StretchyFlatList and StretchySectionList.<br>
+You can find all available components usage in example project.</i>
 
 ## Contribution
 

@@ -2803,6 +2803,10 @@ lodash.templatesettings@^3.0.0:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
 
+lodash@4.x.x:
+  version "4.17.5"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
+
 lodash@^3.5.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
@@ -3519,6 +3523,12 @@ react-native-linear-gradient@^2.4.0:
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.4.0.tgz#51d8ea12bb72a59bede9edc87b694b16b64cf435"
   dependencies:
     prop-types "^15.5.10"
+
+react-native-navigation@^1.1.428:
+  version "1.1.428"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.428.tgz#c602115387681116293af9556c122192be10dc53"
+  dependencies:
+    lodash "4.x.x"
 
 react-native-stretchy@^1.0.0:
   version "1.0.0"
