@@ -68,7 +68,7 @@ Simple ScrollView with stretchy header support.
 If you want to use FlatList component with stretchy header support, you can use this component instead of StretchyHeader for better rendering and performance.<br>
 
 ### <b>StretchySectionList</b>
-If you want to use FlatList component with stretchy header support, you can use this component instead of StretchyHeader for better rendering and performance.<br>
+If you want to use SectionList component with stretchy header support, you can use this component instead of StretchyHeader for better rendering and performance.<br>
 
 <i>NOTE: In addition to default stretchy props, you can use all available default props of React-Native FlatList and SectionList for StretchyFlatList and StretchySectionList.<br>
 You can find all available components usage in example project.</i>
