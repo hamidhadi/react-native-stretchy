@@ -3530,9 +3530,9 @@ react-native-navigation@^1.1.428:
   dependencies:
     lodash "4.x.x"
 
-react-native-stretchy@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-stretchy/-/react-native-stretchy-2.0.0.tgz#050151844c632b05cf63e224eb44ffa772c2b31c"
+react-native-stretchy@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-stretchy/-/react-native-stretchy-2.0.1.tgz#2844a85f037c595b96b0d918202b973994111df3"
   dependencies:
     react-native-linear-gradient "^2.4.0"
 
@@ -4147,8 +4147,8 @@ string_decoder@~1.0.3:
     safe-buffer "~5.1.0"
 
 stringstream@~0.0.4, stringstream@~0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/stringstream/-/stringstream-0.0.5.tgz#4e484cd4de5a0bbbee18e46307710a8a81621878"
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/stringstream/-/stringstream-0.0.6.tgz#7880225b0d4ad10e30927d167a1d6f2fd3b33a72"
 
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
