@@ -3157,8 +3157,8 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
 nwmatcher@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/nwmatcher/-/nwmatcher-1.4.3.tgz#64348e3b3d80f035b40ac11563d278f8b72db89c"
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/nwmatcher/-/nwmatcher-1.4.4.tgz#2285631f34a95f0d0395cd900c96ed39b58f346e"
 
 oauth-sign@~0.8.1, oauth-sign@~0.8.2:
   version "0.8.2"
@@ -3530,9 +3530,9 @@ react-native-navigation@^1.1.428:
   dependencies:
     lodash "4.x.x"
 
-react-native-stretchy@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-stretchy/-/react-native-stretchy-2.0.0.tgz#050151844c632b05cf63e224eb44ffa772c2b31c"
+react-native-stretchy@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-stretchy/-/react-native-stretchy-2.0.1.tgz#2844a85f037c595b96b0d918202b973994111df3"
   dependencies:
     react-native-linear-gradient "^2.4.0"
 
