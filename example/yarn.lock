@@ -47,8 +47,8 @@ acorn-globals@^4.0.0:
     acorn "^5.0.0"
 
 acorn@^5.0.0, acorn@^5.1.2:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.3.0.tgz#7446d39459c54fb49a80e6ee6478149b940ec822"
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.4.tgz#3e8d8a9947d0599a1796d10225d7432f4a4acf5e"
 
 ajv@^4.9.1:
   version "4.11.8"
@@ -3530,9 +3530,9 @@ react-native-navigation@^1.1.428:
   dependencies:
     lodash "4.x.x"
 
-react-native-stretchy@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-stretchy/-/react-native-stretchy-2.0.0.tgz#050151844c632b05cf63e224eb44ffa772c2b31c"
+react-native-stretchy@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-stretchy/-/react-native-stretchy-2.0.1.tgz#2844a85f037c595b96b0d918202b973994111df3"
   dependencies:
     react-native-linear-gradient "^2.4.0"
 
