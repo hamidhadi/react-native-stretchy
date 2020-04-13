@@ -1,4 +1,12 @@
-[
+export interface Photo {
+  albumId: number,
+  id: number,
+  title: string,
+  url: string,
+  thumbnailUrl: string
+}
+
+export const photos: Photo[] = [
   {
     "albumId": 1,
     "id": 1,
