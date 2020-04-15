@@ -33,11 +33,13 @@ export const useOnScrollHandle: UseOnScrollHandle = (listener) => {
     [imageWrapperLayout],
   );
 
-  const [animation, animationEvent] = useStretchyAnimation(animationListener);
+  const { animation, onAnimationEvent } = useStretchyAnimation(
+    animationListener,
+  );
 
   return {
     animation,
     onImageWrapperLayout,
-    onScroll: animationEvent,
+    onScroll: onAnimationEvent,
   };
 };

@@ -7,12 +7,15 @@ import { useState, useCallback } from 'react';
 
 export type UseStretchyAnimation = (
   listener?: (offsetY: number) => void,
-) => [Animated.Value, (event: NativeSyntheticEvent<NativeScrollEvent>) => void];
+) => {
+  animation: Animated.Value;
+  onAnimationEvent: (event: NativeSyntheticEvent<NativeScrollEvent>) => void;
+};
 
 export const useStretchyAnimation: UseStretchyAnimation = (listener) => {
   const [animation] = useState(new Animated.Value(1));
 
-  const animationEvent = useCallback(
+  const onAnimationEvent = useCallback(
     Animated.event<NativeScrollEvent>(
       [
         {
@@ -30,5 +33,5 @@ export const useStretchyAnimation: UseStretchyAnimation = (listener) => {
     [],
   );
 
-  return [animation, animationEvent];
+  return { animation, onAnimationEvent };
 };
