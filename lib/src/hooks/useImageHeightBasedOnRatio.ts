@@ -9,7 +9,7 @@ const WINDOW_WIDTH = Dimensions.get('window').width;
 export type UseImageHeightBasedOnRatio = (
   image?: StretchyImage,
   preferredImageHeight?: number,
-) => [number, () => void];
+) => { imageHeight: number; onImageLoad: () => void };
 
 export const useImageHeightBasedOnRatio: UseImageHeightBasedOnRatio = (
   image,
@@ -45,5 +45,5 @@ export const useImageHeightBasedOnRatio: UseImageHeightBasedOnRatio = (
     }
   }, [image]);
 
-  return [imageHeight, onImageLoad];
+  return { imageHeight, onImageLoad };
 };

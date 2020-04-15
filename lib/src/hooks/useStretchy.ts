@@ -29,16 +29,16 @@ export const useStretchy: UseStretchy = ({
     scrollListener,
   );
 
-  const [heightBasedOnRatio, onImageLoad] = useImageHeightBasedOnRatio(
+  const { imageHeight, onImageLoad } = useImageHeightBasedOnRatio(
     image,
     preferredImageHeight,
   );
 
   return {
     animation,
-    heightBasedOnRatio,
     onImageLoad,
     onScroll,
     onImageWrapperLayout,
+    heightBasedOnRatio: imageHeight,
   };
 };
