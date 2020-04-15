@@ -1,6 +1,10 @@
 import { useState, useCallback } from 'react';
 import { LayoutRectangle, LayoutChangeEvent } from 'react-native';
-import { UseImageWrapperLayout } from '../types';
+
+export type UseImageWrapperLayout = () => [
+  LayoutRectangle | undefined,
+  (event: LayoutChangeEvent) => void,
+];
 
 export const useImageWrapperLayout: UseImageWrapperLayout = () => {
   const [imageWrapperLayout, setImageWrapperLayout] = useState<

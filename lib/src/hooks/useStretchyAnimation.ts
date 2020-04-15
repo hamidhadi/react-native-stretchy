@@ -1,9 +1,13 @@
 import {
   Animated,
   NativeScrollEvent,
+  NativeSyntheticEvent,
 } from 'react-native';
 import { useState, useCallback } from 'react';
-import { UseStretchyAnimation } from '../types';
+
+export type UseStretchyAnimation = (
+  listener?: (offsetY: number) => void,
+) => [Animated.Value, (event: NativeSyntheticEvent<NativeScrollEvent>) => void];
 
 export const useStretchyAnimation: UseStretchyAnimation = (listener) => {
   const [animation] = useState(new Animated.Value(1));

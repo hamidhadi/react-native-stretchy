@@ -1,7 +1,21 @@
 import { useCallback } from 'react';
-import { UseOnScrollHandle } from '../types';
+import {
+  Animated,
+  LayoutChangeEvent,
+  NativeSyntheticEvent,
+  NativeScrollEvent,
+} from 'react-native';
+import { StretchyOnScroll } from '../types';
 import { useImageWrapperLayout } from './useImageWrapperLayout';
 import { useStretchyAnimation } from './useStretchyAnimation';
+
+export type UseOnScrollHandle = (
+  listener?: StretchyOnScroll,
+) => {
+  animation: Animated.Value;
+  onImageWrapperLayout(event: LayoutChangeEvent): void;
+  onScroll(event: NativeSyntheticEvent<NativeScrollEvent>): void;
+};
 
 export const useOnScrollHandle: UseOnScrollHandle = (listener) => {
   const [imageWrapperLayout, onImageWrapperLayout] = useImageWrapperLayout();

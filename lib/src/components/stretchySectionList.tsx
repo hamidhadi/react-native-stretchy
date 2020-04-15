@@ -1,13 +1,21 @@
 import React from 'react';
-import { View, Animated } from 'react-native';
+import { View, Animated, SectionListProps } from 'react-native';
 import { commonStyles as styles } from './styles';
-import { StretchySectionListComponent } from '../types';
+import { StretchyProps } from '../types';
 import { useStretchy } from '../hooks/useStretchy';
 import { StretchyImage } from './stretchyImage';
 
+export type StretchySectionListProps<ItemT> = React.PropsWithChildren<
+  StretchyProps &
+    Omit<Animated.AnimatedProps<SectionListProps<ItemT>>, 'onScroll'>
+>;
+
+export type StretchySectionListComponent = <ItemT>(
+  props: StretchySectionListProps<ItemT>,
+) => JSX.Element;
+
 export const StretchySectionList: StretchySectionListComponent = ({
   backgroundColor,
-  children,
   foreground,
   gradient,
   image,
@@ -18,7 +26,11 @@ export const StretchySectionList: StretchySectionListComponent = ({
   style,
   ...otherProps
 }) => {
-  const stretchy = useStretchy(image, imageHeight, onScroll);
+  const stretchy = useStretchy({
+    image,
+    preferredImageHeight: imageHeight,
+    scrollListener: onScroll,
+  });
 
   return (
     <View style={[styles.container, { backgroundColor }]}>
@@ -36,6 +48,7 @@ export const StretchySectionList: StretchySectionListComponent = ({
         {...otherProps}
         style={[style, styles.contentContainer]}
         scrollEventThrottle={1}
+        onScroll={stretchy.onScroll}
         ListHeaderComponent={
           <View
             style={[
@@ -45,7 +58,6 @@ export const StretchySectionList: StretchySectionListComponent = ({
             {foreground}
           </View>
         }
-        onScroll={stretchy.onScroll}
       />
     </View>
   );

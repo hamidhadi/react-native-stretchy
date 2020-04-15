@@ -1,11 +1,14 @@
 import React, { useMemo } from 'react';
-import { Animated, View, Dimensions } from 'react-native';
+import { Animated, View, Dimensions, ScrollViewProps } from 'react-native';
 import { commonStyles as styles } from './styles';
 import { StretchyImage } from './stretchyImage';
-import { StretchyHeaderProps } from '../types';
+import { StretchyProps } from '../types';
 import { useStretchy } from '../hooks/useStretchy';
 
 const wHeight = Dimensions.get('window').height;
+
+export type StretchyHeaderProps = StretchyProps &
+  Omit<Animated.AnimatedProps<ScrollViewProps>, 'onScroll'>;
 
 export const StretchyHeader: React.FC<StretchyHeaderProps> = ({
   backgroundColor,
@@ -20,7 +23,11 @@ export const StretchyHeader: React.FC<StretchyHeaderProps> = ({
   style,
   ...props
 }) => {
-  const stretchy = useStretchy(image, imageHeight, onScroll);
+  const stretchy = useStretchy({
+    image,
+    preferredImageHeight: imageHeight,
+    scrollListener: onScroll,
+  });
   const contentMinHeight = useMemo(
     () =>
       stretchy.heightBasedOnRatio ? wHeight - stretchy.heightBasedOnRatio : 0,

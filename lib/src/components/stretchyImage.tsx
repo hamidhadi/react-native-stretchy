@@ -1,9 +1,17 @@
 import React, { useMemo } from 'react';
-import { View } from 'react-native';
+import { View, Animated, LayoutChangeEvent } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { StretchyImageProps } from '../types';
+import { StretchyProps } from '../types';
 import { AnimatedImageBackground } from './animatedImageBackground';
 import { stretchyImageStyles as styles } from './styles';
+
+export interface StretchyImageProps
+  extends Omit<StretchyProps, 'backgroundColor' | 'foreground' | 'onScroll'> {
+  animation: Animated.Value;
+  imageHeight: number;
+  onImageLoad(): void;
+  onLayout(event: LayoutChangeEvent): void;
+}
 
 export const StretchyImage: React.FC<StretchyImageProps> = ({
   animation,

@@ -2,9 +2,14 @@ import { useEffect, useState, useMemo, useCallback } from 'react';
 import { Image, Dimensions, ImageURISource } from 'react-native';
 // @ts-ignore
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
-import { UseImageHeightBasedOnRatio } from '../types';
+import { StretchyImage } from '../types';
 
-const wWidth = Dimensions.get('window').width;
+const WINDOW_WIDTH = Dimensions.get('window').width;
+
+export type UseImageHeightBasedOnRatio = (
+  image?: StretchyImage,
+  preferredImageHeight?: number,
+) => [number, () => void];
 
 export const useImageHeightBasedOnRatio: UseImageHeightBasedOnRatio = (
   image,
@@ -18,7 +23,8 @@ export const useImageHeightBasedOnRatio: UseImageHeightBasedOnRatio = (
     if (!imageIsLoaded) return preferredImageHeight || 100;
 
     return (
-      preferredImageHeight || (ratio > 1 ? wWidth / ratio : wWidth * ratio)
+      preferredImageHeight ||
+      (ratio > 1 ? WINDOW_WIDTH / ratio : WINDOW_WIDTH * ratio)
     );
   }, [imageIsLoaded, preferredImageHeight, ratio]);
 
