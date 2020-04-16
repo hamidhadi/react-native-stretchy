@@ -25,7 +25,6 @@ export const StretchyHeader: React.FC<StretchyHeaderProps> = ({
 }) => {
   const stretchy = useStretchy({
     image,
-    preferredImageHeight: imageHeight,
     scrollListener: onScroll,
   });
   const contentMinHeight = useMemo(
@@ -42,8 +41,7 @@ export const StretchyHeader: React.FC<StretchyHeaderProps> = ({
         imageWrapperStyle={imageWrapperStyle}
         gradient={gradient}
         animation={stretchy.animation}
-        imageHeight={stretchy.heightBasedOnRatio}
-        onImageLoad={stretchy.onImageLoad}
+        imageHeight={imageHeight || stretchy.heightBasedOnRatio}
         onLayout={stretchy.onImageWrapperLayout}
       />
       <Animated.ScrollView
@@ -54,7 +52,7 @@ export const StretchyHeader: React.FC<StretchyHeaderProps> = ({
         <View
           style={[
             styles.foregroundContainer,
-            { height: stretchy.heightBasedOnRatio },
+            { height: imageHeight || stretchy.heightBasedOnRatio },
           ]}>
           {foreground}
         </View>

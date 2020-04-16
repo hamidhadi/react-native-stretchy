@@ -28,7 +28,6 @@ export const StretchySectionList: StretchySectionListComponent = ({
 }) => {
   const stretchy = useStretchy({
     image,
-    preferredImageHeight: imageHeight,
     scrollListener: onScroll,
   });
 
@@ -40,8 +39,7 @@ export const StretchySectionList: StretchySectionListComponent = ({
         imageWrapperStyle={imageWrapperStyle}
         gradient={gradient}
         animation={stretchy.animation}
-        imageHeight={stretchy.heightBasedOnRatio}
-        onImageLoad={stretchy.onImageLoad}
+        imageHeight={imageHeight || stretchy.heightBasedOnRatio}
         onLayout={stretchy.onImageWrapperLayout}
       />
       <Animated.SectionList
@@ -53,7 +51,7 @@ export const StretchySectionList: StretchySectionListComponent = ({
           <View
             style={[
               styles.foregroundContainer,
-              { height: stretchy.heightBasedOnRatio },
+              { height: imageHeight || stretchy.heightBasedOnRatio },
             ]}>
             {foreground}
           </View>

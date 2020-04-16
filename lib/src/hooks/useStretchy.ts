@@ -10,35 +10,25 @@ import { useOnScrollHandle } from './useOnScrollHandle';
 
 export type UseStretchy = (config: {
   image?: StretchyImage;
-  preferredImageHeight?: number;
   scrollListener?: StretchyOnScroll;
 }) => {
   animation: Animated.Value;
   heightBasedOnRatio: number;
-  onImageLoad: () => void;
   onScroll(event: NativeSyntheticEvent<NativeScrollEvent>): void;
   onImageWrapperLayout(event: LayoutChangeEvent): void;
 };
 
-export const useStretchy: UseStretchy = ({
-  image,
-  preferredImageHeight,
-  scrollListener,
-}) => {
+export const useStretchy: UseStretchy = ({ image, scrollListener }) => {
   const { animation, onScroll, onImageWrapperLayout } = useOnScrollHandle(
     scrollListener,
   );
 
-  const { imageHeight, onImageLoad } = useImageHeightBasedOnRatio(
-    image,
-    preferredImageHeight,
-  );
+  const heightBasedOnRatio = useImageHeightBasedOnRatio(image);
 
   return {
     animation,
-    onImageLoad,
+    heightBasedOnRatio,
     onScroll,
     onImageWrapperLayout,
-    heightBasedOnRatio: imageHeight,
   };
 };
