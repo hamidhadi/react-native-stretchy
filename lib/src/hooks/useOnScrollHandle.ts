@@ -21,7 +21,7 @@ export const useOnScrollHandle: UseOnScrollHandle = (listener) => {
   const [imageWrapperLayout, onImageWrapperLayout] = useImageWrapperLayout();
 
   const animationListener = useCallback(
-    (offsetY) => {
+    (offsetY: number) => {
       if (listener) {
         if (imageWrapperLayout && offsetY >= imageWrapperLayout?.height) {
           listener(offsetY, true);
