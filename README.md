@@ -59,21 +59,16 @@ These are default properties that is available for all stretchy components
 | onScroll        |  `null`   | A callback function with these arguments:<br>`position`: current position of scroll<br>`reachedToTheBottomOfHeader`: boolean flag to specify whether the scroll has reached to the bottom of header or not |
 
 ## Components
-
-### <b>StretchyHeader</b>
-
+### <b>`<StretchyHeader />`</b>
 Simple ScrollView with stretchy header support.
 
-### <b>StretchyFlatList</b>
-
+### <b>`<StretchyFlatList />`</b>
 If you want to use FlatList component with stretchy header support, you can use this component instead of StretchyHeader for better rendering and performance.<br>
 
-### <b>StretchySectionList</b>
-
+### <b>`<StretchySectionList />`</b>
 If you want to use SectionList component with stretchy header support, you can use this component instead of StretchyHeader for better rendering and performance.<br>
 
 <i>NOTE: <br>
-
 1. In addition to the default stretchy props, you can use all available props for `ScrollView`, `FlatList` and `SectionList`.<br>
 2. You can find all available components usage in example project.</i>
 
@@ -88,11 +83,9 @@ To see all components in action you can run the Example project by following the
 <i>NOTE: I changed the location of `iOS` and `Android` directories and even after specifying new locations on `react-native.config` we can't run the example project via RN cli. [See this issue][4]</i>
 
 ## Contribution
-
 I'm still trying to improve the codebase of this package so if you have any idea in terms of the structure, features or anything else, please let me know by whether sending a PR or open an issue and start a discuession. I really appreciate that. :wink:
 
 ## License
-
 Licensed under the [MIT License](https://github.com/hamidhadi/react-native-stretchy/blob/master/LICENSE).
 
 [1]: https://github.com/react-native-community/react-native-linear-gradient
