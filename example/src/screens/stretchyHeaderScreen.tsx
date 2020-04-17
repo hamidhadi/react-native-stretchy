@@ -1,12 +1,11 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { StretchyHeader } from '../../../';
+import { StretchyHeader } from '../../..';
 import { Foreground } from './components';
 
 export const StretchyHeaderScreen: React.FC<{}> = () => (
   <StretchyHeader
     image={require('../../asset/batman.jpg')}
-    imageHeight={300}
     foreground={<Foreground />}
     backgroundColor="#EFEFF4"
     gradient={{

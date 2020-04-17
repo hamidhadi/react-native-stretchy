@@ -6,7 +6,7 @@ import {
   SectionListData,
   StyleSheet,
 } from 'react-native';
-import { StretchySectionList } from '../../../';
+import { StretchySectionList } from '../../..';
 import { Foreground } from './components';
 import { photos, Photo } from '../stub';
 
@@ -42,7 +42,6 @@ export const StretchySectionListScreen: React.FC<{}> = () => {
   return (
     <StretchySectionList
       image={require('../../asset/batman.jpg')}
-      imageHeight={300}
       foreground={<Foreground />}
       backgroundColor="#EFEFF4"
       renderSectionHeader={renderSectionHeader}

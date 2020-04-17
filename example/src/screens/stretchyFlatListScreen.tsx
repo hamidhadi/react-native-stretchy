@@ -12,13 +12,12 @@ const renderItem: ListRenderItem<Photo> = ({ item }) => (
   </View>
 );
 
-const keyExtractor= (item: Photo) => `${item.id}`
+const keyExtractor = (item: Photo) => `${item.id}`;
 
 export const StretchyFlatListScreen: React.FC<ScreenProps> = () => {
   return (
     <StretchyFlatList
       image={require('../../asset/batman.jpg')}
-      imageHeight={300}
       foreground={<Foreground />}
       backgroundColor="#EFEFF4"
       data={photos}
