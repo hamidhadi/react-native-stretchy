@@ -1,32 +1,27 @@
 import React, { useMemo } from 'react';
 import { Animated, View, Dimensions, ScrollViewProps } from 'react-native';
 import { commonStyles as styles } from './styles';
-import { StretchyImage } from './stretchyImage';
-import { StretchyProps } from '../types';
-import { useStretchy } from '../hooks/useStretchy';
+import {
+  StretchyComponentProps,
+  WithStretchyProps,
+  WithStretchy,
+} from './withStretchy';
 
 const wHeight = Dimensions.get('window').height;
 
-export type StretchyHeaderProps = StretchyProps &
-  Omit<Animated.AnimatedProps<ScrollViewProps>, 'onScroll'>;
+export type StretchyHeaderProps = WithStretchyProps &
+  StretchyComponentProps<ScrollViewProps>;
 
-export const StretchyHeader: React.FC<StretchyHeaderProps> = ({
+const StretchyHeader: React.FC<StretchyHeaderProps> = ({
   backgroundColor,
   children,
   foreground,
-  gradient,
-  image,
   imageHeight,
-  imageResizeMode,
-  imageWrapperStyle,
   onScroll,
+  stretchy,
   style,
   ...props
 }) => {
-  const stretchy = useStretchy({
-    image,
-    scrollListener: onScroll,
-  });
   const contentMinHeight = useMemo(
     () =>
       stretchy.heightBasedOnRatio ? wHeight - stretchy.heightBasedOnRatio : 0,
@@ -34,36 +29,27 @@ export const StretchyHeader: React.FC<StretchyHeaderProps> = ({
   );
 
   return (
-    <View style={[styles.container, { backgroundColor }]}>
-      <StretchyImage
-        image={image}
-        imageResizeMode={imageResizeMode}
-        imageWrapperStyle={imageWrapperStyle}
-        gradient={gradient}
-        animation={stretchy.animation}
-        imageHeight={imageHeight || stretchy.heightBasedOnRatio}
-        onLayout={stretchy.onImageWrapperLayout}
-      />
-      <Animated.ScrollView
-        {...props}
-        style={[style, styles.contentContainer]}
-        scrollEventThrottle={1}
-        onScroll={stretchy.onScroll}>
-        <View
-          style={[
-            styles.foregroundContainer,
-            { height: imageHeight || stretchy.heightBasedOnRatio },
-          ]}>
-          {foreground}
-        </View>
-        <View
-          style={{
-            backgroundColor,
-            minHeight: contentMinHeight,
-          }}>
-          {children}
-        </View>
-      </Animated.ScrollView>
-    </View>
+    <Animated.ScrollView
+      {...props}
+      style={[style, styles.contentContainer]}
+      scrollEventThrottle={1}
+      onScroll={stretchy.onScroll}>
+      <View
+        style={[
+          styles.foregroundContainer,
+          { height: imageHeight || stretchy.heightBasedOnRatio },
+        ]}>
+        {foreground}
+      </View>
+      <View
+        style={{
+          backgroundColor,
+          minHeight: contentMinHeight,
+        }}>
+        {children}
+      </View>
+    </Animated.ScrollView>
   );
 };
+
+export default WithStretchy<ScrollViewProps>(StretchyHeader);
