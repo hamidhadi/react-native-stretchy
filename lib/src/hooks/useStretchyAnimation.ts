@@ -30,7 +30,7 @@ export const useStretchyAnimation: UseStretchyAnimation = (listener) => {
           listener && listener(contentOffset.y),
       },
     ),
-    [],
+    [listener],
   );
 
   return { animation, onAnimationEvent };
