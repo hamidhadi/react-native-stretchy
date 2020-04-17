@@ -7,7 +7,7 @@ import {
   WithStretchy,
 } from './withStretchy';
 
-const wHeight = Dimensions.get('window').height;
+const WINDOW_HEIGHT = Dimensions.get('window').height;
 
 export type StretchyHeaderProps = WithStretchyProps &
   StretchyComponentProps<ScrollViewProps>;
@@ -20,17 +20,19 @@ const StretchyHeader: React.FC<StretchyHeaderProps> = ({
   onScroll,
   stretchy,
   style,
-  ...props
+  ...otherProps
 }) => {
   const contentMinHeight = useMemo(
     () =>
-      stretchy.heightBasedOnRatio ? wHeight - stretchy.heightBasedOnRatio : 0,
+      stretchy.heightBasedOnRatio
+        ? WINDOW_HEIGHT - stretchy.heightBasedOnRatio
+        : 0,
     [stretchy.heightBasedOnRatio],
   );
 
   return (
     <Animated.ScrollView
-      {...props}
+      {...otherProps}
       style={[style, styles.contentContainer]}
       scrollEventThrottle={1}
       onScroll={stretchy.onScroll}>
