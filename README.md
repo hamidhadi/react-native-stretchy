@@ -25,12 +25,12 @@ npm install react-native-stretchy --save
 ```js
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import { StretchyHeader } from 'react-native-stretchy';
+import { StretchyScrollView } from 'react-native-stretchy';
 
-class MyStretchyHeader extends Component {
+class SystretchyScrollView extends Component {
   render() {
     return (
-      <StretchyHeader
+      <StretchyScrollView
         image={{ uri: 'https://example.com/myImageAddress' }}
         gradient={{ colors: ['#000', 'transparent', '#000'] }}
         onScroll={(position, reachedToTheBottomOfHeader) =>
@@ -38,7 +38,7 @@ class MyStretchyHeader extends Component {
         }>
         <Text>Foo</Text>
         <Text>Bar</Text>
-      </StretchyHeader>
+      </StretchyScrollView>
     );
   }
 }
@@ -59,14 +59,14 @@ These are default properties that is available for all stretchy components
 | onScroll        |  `null`   | A callback function with these arguments:<br>`position`: current position of scroll<br>`reachedToTheBottomOfHeader`: boolean flag to specify whether the scroll has reached to the bottom of header or not |
 
 ## Components
-### <b>`<StretchyHeader />`</b>
+### <b>`<StretchyScrollView />`</b>
 Simple ScrollView with stretchy header support.
 
 ### <b>`<StretchyFlatList />`</b>
-If you want to use FlatList component with stretchy header support, you can use this component instead of StretchyHeader for better rendering and performance.<br>
+React-Native FlatList component with stretchy header support.<br>
 
 ### <b>`<StretchySectionList />`</b>
-If you want to use SectionList component with stretchy header support, you can use this component instead of StretchyHeader for better rendering and performance.<br>
+React-Native SectionList component with stretchy header support.<br>
 
 <i>NOTE: <br>
 1. In addition to the default stretchy props, you can use all available props for `ScrollView`, `FlatList` and `SectionList`.<br>

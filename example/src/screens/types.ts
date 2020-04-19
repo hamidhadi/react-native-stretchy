@@ -1,6 +1,6 @@
 export enum ScreenNames {
   HomeScreen = 'example.homeScreen',
-  StretchyHeaderScreen = 'example.stretchyHeaderScreen',
+  StretchyScrollViewScreen = 'example.stretchyScrollViewScreen',
   StretchyFlatListScreen = 'example.stretchyFlatListScreen',
   StretchySectionListScreen = 'example.stretchySectionListScreen',
 }

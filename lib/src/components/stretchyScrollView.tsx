@@ -9,10 +9,10 @@ import {
 
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 
-export type StretchyHeaderProps = WithStretchyProps &
+export type StretchyScrollViewProps = WithStretchyProps &
   StretchyComponentProps<ScrollViewProps>;
 
-const StretchyHeader: React.FC<StretchyHeaderProps> = ({
+const StretchyScrollView: React.FC<StretchyScrollViewProps> = ({
   backgroundColor,
   children,
   foreground,
@@ -54,4 +54,4 @@ const StretchyHeader: React.FC<StretchyHeaderProps> = ({
   );
 };
 
-export default WithStretchy<ScrollViewProps>(StretchyHeader);
+export default WithStretchy<ScrollViewProps>(StretchyScrollView);

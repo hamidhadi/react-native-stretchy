@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { StretchyHeader } from '../../..';
+import { StretchyScrollView } from '../../..';
 import { Foreground } from './components';
 
-export const StretchyHeaderScreen: React.FC<{}> = () => (
-  <StretchyHeader
+export const StretchyScrollViewScreen: React.FC<{}> = () => (
+  <StretchyScrollView
     image={require('../../asset/batman.jpg')}
     foreground={<Foreground />}
     backgroundColor="#EFEFF4"
@@ -55,5 +55,5 @@ export const StretchyHeaderScreen: React.FC<{}> = () => (
       wealth, intimidation, and indomitable will. A large assortment of villains
       make up Batman's rogues gallery, including his archenemy, the Joker.
     </Text>
-  </StretchyHeader>
+  </StretchyScrollView>
 );
