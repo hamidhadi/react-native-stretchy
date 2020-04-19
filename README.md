@@ -1,26 +1,22 @@
-# react-native-stretchy
+# react-native-stretchy 🤸‍♀️
 
-A ReactNative scrollable stretchy header component fully optimized for lists.
+**A ReactNative Scrollable Stretchy Header Component.**
+
+✅ Fully optimized for lists<br>
+✅ Fully TypeScript support<br>
+✅ Use native animation<br>
+❌ Expo Support
 
 ![StretchyBatman](/demo.gif)
 
-## Installation
-
-You can install this package via `yarn`:
-
-```bash
-yarn add react-native-stretchy
-```
-
-or `npm`
-
+## 🧐 Installation
+1. Install the package:
 ```bash
 npm install react-native-stretchy --save
 ```
+2. Link [react-native-linear-gradient][1] to your project.
 
-**NOTE**: Link [react-native-linear-gradient][1] to your project.
-
-## Basic Usage
+## 🎓 Basic Usage
 
 ```js
 import React, { Component } from 'react';
@@ -44,7 +40,7 @@ class SystretchyScrollView extends Component {
 }
 ```
 
-## Properties
+## ℹ️ Properties
 
 These are default properties that is available for all stretchy components
 
@@ -58,22 +54,29 @@ These are default properties that is available for all stretchy components
 | foreground      |  `null`   | A RN Component for foreground content of background                                                                                                                                                        |
 | onScroll        |  `null`   | A callback function with these arguments:<br>`position`: current position of scroll<br>`reachedToTheBottomOfHeader`: boolean flag to specify whether the scroll has reached to the bottom of header or not |
 
-## Components
+## 💁‍♂️ Components
+
 ### <b>`<StretchyScrollView />`</b>
+
 Simple ScrollView with stretchy header support.
 
 ### <b>`<StretchyFlatList />`</b>
+
 React-Native FlatList component with stretchy header support.<br>
 
 ### <b>`<StretchySectionList />`</b>
+
 React-Native SectionList component with stretchy header support.<br>
 
 <i>NOTE: <br>
+
 1. In addition to the default stretchy props, you can use all available props for `ScrollView`, `FlatList` and `SectionList`.<br>
 2. You can find all available components usage in example project.</i>
 
-## Run Example Project
+## 🎮 Run Example Project
+
 To see all components in action you can run the Example project by following these steps:
+
 1. Clone the project
 2. Install node modules by running `npm i` or `yarn` at the root of project
 3. Run `npm run watch` or `yarn watch` to compile and watch source files
@@ -82,10 +85,12 @@ To see all components in action you can run the Example project by following the
 
 <i>NOTE: I changed the location of `iOS` and `Android` directories and even after specifying new locations on `react-native.config` we can't run the example project via RN cli. [See this issue][4]</i>
 
-## Contribution
+## 🧩 Contribution
+
 I'm still trying to improve the codebase of this package so if you have any idea in terms of the structure, features or anything else, please let me know by whether sending a PR or open an issue and start a discuession. I really appreciate that. :wink:
 
-## License
+## 👮‍♂️ License
+
 Licensed under the [MIT License](https://github.com/hamidhadi/react-native-stretchy/blob/master/LICENSE).
 
 [1]: https://github.com/react-native-community/react-native-linear-gradient
