@@ -18,11 +18,20 @@
   },
   "keywords": [
     "react",
+    "react-component",
     "react-native",
+    "react-native-component",
     "scrollview",
+    "flatlist",
+    "sectionlist",
     "stretchy",
     "stretch-view",
-    "component"
+    "component",
+    "animation",
+    "react-native-animation",
+    "scroll-animation",
+    "scrollable-component",
+    "scrollable-animation"
   ],
   "author": "Hamid Hadi <hamidhadi@live.com> (https://github.com/hamidhadi)",
   "license": "MIT",
