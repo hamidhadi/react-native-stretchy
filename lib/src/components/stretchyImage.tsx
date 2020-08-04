@@ -10,6 +10,7 @@ export interface StretchyImageProps
   animation: Animated.Value;
   imageHeight: number;
   onLayout(event: LayoutChangeEvent): void;
+  parallaxIntensity?: number;
 }
 
 export const StretchyImage: React.FC<StretchyImageProps> = ({
@@ -20,14 +21,22 @@ export const StretchyImage: React.FC<StretchyImageProps> = ({
   imageWrapperStyle,
   imageHeight,
   onLayout,
+  parallaxIntensity,
 }) => {
-  const transformStyles = useMemo(
-    () => ({
+  const transformStyles = useMemo(() => {
+    const parallaxOffset =
+      parallaxIntensity === undefined ? 0 : Math.max(parallaxIntensity, -1);
+
+    return {
       transform: [
         {
           translateY: animation.interpolate({
             inputRange: [-imageHeight, 0, imageHeight],
-            outputRange: [imageHeight / 2, 0, -imageHeight / 2],
+            outputRange: [
+              imageHeight / 2,
+              0,
+              -imageHeight / (2 + parallaxOffset),
+            ],
           }),
         },
         {
@@ -37,9 +46,8 @@ export const StretchyImage: React.FC<StretchyImageProps> = ({
           }),
         },
       ],
-    }),
-    [animation, imageHeight],
-  );
+    };
+  }, [animation, imageHeight, parallaxIntensity]);
 
   return (
     <View

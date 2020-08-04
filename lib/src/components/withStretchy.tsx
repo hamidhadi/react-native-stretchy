@@ -26,6 +26,7 @@ export const WithStretchy = <T extends {}>(
       imageWrapperStyle,
       imageResizeMode,
       onScroll,
+      parallaxIntensity,
     } = props;
 
     const stretchy = useStretchy({
@@ -43,6 +44,7 @@ export const WithStretchy = <T extends {}>(
           animation={stretchy.animation}
           imageHeight={imageHeight || stretchy.heightBasedOnRatio}
           onLayout={stretchy.onImageWrapperLayout}
+          parallaxIntensity={parallaxIntensity}
         />
         <WrappedComponent stretchy={stretchy} {...props} />
       </View>

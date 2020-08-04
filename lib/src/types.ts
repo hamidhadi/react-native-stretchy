@@ -26,4 +26,5 @@ export interface StretchyProps {
     | 'angleCenter'
     | 'angle'
   >;
+  parallaxIntensity?: number;
 }
