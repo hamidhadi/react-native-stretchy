@@ -44,15 +44,16 @@ class SystretchyScrollView extends Component {
 
 These are default properties that is available for all stretchy components
 
-| Prop            |  Default  | Description                                                                                                                                                                                                |
-| --------------- | :-------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| backgroundColor |  `#FFF`   | Background color of the inner content                                                                                                                                                                      |
-| image           |  `null`   | The image of the stretchy header ([RN image source][2])                                                                                                                                                    |
-| imageHeight     |  `null`   | Height of the stretchy header image (keep ratio of `image` if not provided)                                                                                                                                |
-| imageResizeMode | `'cover'` | ResizeMode of the stretchy header image. [You can use one of these values](https://facebook.github.io/react-native/docs/image.html#resizemode)                                                             |
-| gradient        |   null    | Gradient config object. See [LinearGradientProps][3]                                                                                                                                                       |
-| foreground      |  `null`   | A RN Component for foreground content of background                                                                                                                                                        |
-| onScroll        |  `null`   | A callback function with these arguments:<br>`position`: current position of scroll<br>`reachedToTheBottomOfHeader`: boolean flag to specify whether the scroll has reached to the bottom of header or not |
+| Prop              |  Default  | Description                                                                                                                                                                                                |
+| ----------------- | :-------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| backgroundColor   |  `#FFF`   | Background color of the inner content                                                                                                                                                                      |
+| image             |  `null`   | The image of the stretchy header ([RN image source][2])                                                                                                                                                    |
+| imageHeight       |  `null`   | Height of the stretchy header image (keep ratio of `image` if not provided)                                                                                                                                |
+| imageResizeMode   | `'cover'` | ResizeMode of the stretchy header image. [You can use one of these values](https://facebook.github.io/react-native/docs/image.html#resizemode)                                                             |
+| gradient          |   null    | Gradient config object. See [LinearGradientProps][3]                                                                                                                                                       |
+| foreground        |  `null`   | A RN Component for foreground content of background                                                                                                                                                        |
+| onScroll          |  `null`   | A callback function with these arguments:<br>`position`: current position of scroll<br>`reachedToTheBottomOfHeader`: boolean flag to specify whether the scroll has reached to the bottom of header or not |
+| parallaxIntensity |  `null`   | Parallax intensity of stretchy header image (no parallax when set -1)                                                                                                                                      |
 
 ## 💁‍♂️ Components
 
