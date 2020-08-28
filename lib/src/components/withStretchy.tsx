@@ -20,7 +20,6 @@ export const WithStretchy = <T extends {}>(
   const EnhancedComponent: React.FC<StretchyComponentProps<T>> = (props) => {
     const {
       backgroundColor,
-      gradient,
       image,
       imageHeight,
       imageWrapperStyle,
@@ -39,7 +38,6 @@ export const WithStretchy = <T extends {}>(
           image={image}
           imageResizeMode={imageResizeMode}
           imageWrapperStyle={imageWrapperStyle}
-          gradient={gradient}
           animation={stretchy.animation}
           imageHeight={imageHeight || stretchy.heightBasedOnRatio}
           onLayout={stretchy.onImageWrapperLayout}

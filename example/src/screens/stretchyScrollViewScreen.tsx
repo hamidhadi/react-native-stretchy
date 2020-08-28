@@ -8,13 +8,7 @@ export const StretchyScrollViewScreen: React.FC<{}> = () => (
     image={require('../../asset/batman.jpg')}
     foreground={<Foreground />}
     backgroundColor="#EFEFF4"
-    gradient={{
-      colors: [
-        'rgba(0, 0, 0, 0.9)',
-        'rgba(0, 0, 0, 0.5)',
-        'rgba(0, 0, 0, 0.9)',
-      ],
-    }}>
+    >
     <Text style={{ padding: 10 }}>
       Batman is a fictional superhero appearing in American comic books
       published by DC Comics. The character was created by artist Bob Kane and

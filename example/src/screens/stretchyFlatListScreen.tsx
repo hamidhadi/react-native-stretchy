@@ -23,13 +23,6 @@ export const StretchyFlatListScreen: React.FC<ScreenProps> = () => {
       data={photos}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
-      gradient={{
-        colors: [
-          'rgba(0, 0, 0, 0.9)',
-          'rgba(0, 0, 0, 0.5)',
-          'rgba(0, 0, 0, 0.9)',
-        ],
-      }}
     />
   );
 };

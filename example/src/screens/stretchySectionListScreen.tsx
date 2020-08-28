@@ -48,13 +48,6 @@ export const StretchySectionListScreen: React.FC<{}> = () => {
       renderItem={renderItem}
       keyExtractor={keyExtractor}
       sections={sections}
-      gradient={{
-        colors: [
-          'rgba(0, 0, 0, 0.9)',
-          'rgba(0, 0, 0, 0.5)',
-          'rgba(0, 0, 0, 0.9)',
-        ],
-      }}
     />
   );
 };
