@@ -39,9 +39,7 @@
     "url": "https://github.com/hamidhadi/react-native-stretchy/issues"
   },
   "homepage": "https://github.com/hamidhadi/react-native-stretchy#readme",
-  "dependencies": {
-    "react-native-linear-gradient": "^2.5.6"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^16.11.0",
     "react-native": ">=0.60.0"
