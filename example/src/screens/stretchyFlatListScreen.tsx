@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, Image, ListRenderItem } from 'react-native';
 import { StretchyFlatList } from '../../..';
 import { photos, Photo } from '../stub';
 import { ScreenProps } from './types';
-import { Foreground } from './components';
+import { Foreground, Gradient } from './components';
+
 
 const renderItem: ListRenderItem<Photo> = ({ item }) => (
   <View style={styles.itemWrapper}>
@@ -19,6 +20,7 @@ export const StretchyFlatListScreen: React.FC<ScreenProps> = () => {
     <StretchyFlatList
       image={require('../../asset/batman.jpg')}
       foreground={<Foreground />}
+      imageForeground={<Gradient />}
       backgroundColor="#EFEFF4"
       data={photos}
       renderItem={renderItem}

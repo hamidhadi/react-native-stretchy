@@ -1,12 +1,13 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { StretchyScrollView } from '../../..';
-import { Foreground } from './components';
+import { Foreground, Gradient } from './components';
 
 export const StretchyScrollViewScreen: React.FC<{}> = () => (
   <StretchyScrollView
     image={require('../../asset/batman.jpg')}
     foreground={<Foreground />}
+    imageForeground={<Gradient />}
     backgroundColor="#EFEFF4"
     >
     <Text style={{ padding: 10 }}>

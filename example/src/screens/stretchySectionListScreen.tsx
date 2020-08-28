@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { StretchySectionList } from '../../..';
-import { Foreground } from './components';
+import { Foreground, Gradient } from './components';
 import { photos, Photo } from '../stub';
 
 const renderSectionHeader = ({
@@ -43,6 +43,7 @@ export const StretchySectionListScreen: React.FC<{}> = () => {
     <StretchySectionList
       image={require('../../asset/batman.jpg')}
       foreground={<Foreground />}
+      imageForeground={<Gradient />}
       backgroundColor="#EFEFF4"
       renderSectionHeader={renderSectionHeader}
       renderItem={renderItem}

@@ -13,6 +13,7 @@ export interface StretchyProps {
   imageHeight?: number;
   imageResizeMode?: ReactNative.ImageResizeMode;
   imageWrapperStyle?: ReactNative.ViewStyle;
+  imageForeground?: React.ReactElement;
   foreground?: React.ReactElement;
   onScroll?: StretchyOnScroll;
 }

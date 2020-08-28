@@ -17,6 +17,7 @@ export const StretchyImage: React.FC<StretchyImageProps> = ({
   imageResizeMode,
   imageWrapperStyle,
   imageHeight,
+  imageForeground,
   onLayout,
 }) => {
   const transformStyles = useMemo(
@@ -47,7 +48,9 @@ export const StretchyImage: React.FC<StretchyImageProps> = ({
         source={image || {}}
         resizeMode={imageResizeMode}
         style={[styles.animatedImageBackground, transformStyles]}
-      />
+      >
+        {Boolean(imageForeground) && imageForeground}
+      </AnimatedImageBackground>
     </View>
   );
 };
