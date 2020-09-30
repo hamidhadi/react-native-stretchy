@@ -5,7 +5,6 @@ import { photos, Photo } from '../stub';
 import { ScreenProps } from './types';
 import { Foreground, Gradient } from './components';
 
-
 const renderItem: ListRenderItem<Photo> = ({ item }) => (
   <View style={styles.itemWrapper}>
     <Image source={{ uri: item.thumbnailUrl, width: 70, height: 70 }} />

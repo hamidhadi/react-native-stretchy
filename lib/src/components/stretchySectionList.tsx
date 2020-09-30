@@ -1,42 +1,43 @@
 import React from 'react';
-import { View, Animated, SectionListProps } from 'react-native';
+import { View, Animated, SectionListProps, SectionList } from 'react-native';
 import { commonStyles as styles } from './styles';
 import {
   WithStretchy,
   StretchyComponentProps,
-  WithStretchyProps,
+  PropsWithStretchy,
 } from './withStretchy';
 
-export type StretchySectionListProps<ItemT> = WithStretchyProps &
-  StretchyComponentProps<SectionListProps<ItemT>>;
+export type StretchySectionListProps<ItemT> = React.PropsWithChildren<
+  PropsWithStretchy<StretchyComponentProps<SectionListProps<ItemT>>>
+>;
 
-export type StretchySectionListComponent = <ItemT>(
-  props: StretchySectionListProps<ItemT>,
-) => JSX.Element;
-
-const StretchySectionList: StretchySectionListComponent = ({
-  foreground,
-  imageHeight,
-  onScroll,
-  stretchy,
-  style,
-  ...otherProps
-}) => (
-  <Animated.SectionList
-    {...otherProps}
-    style={[style, styles.contentContainer]}
-    scrollEventThrottle={1}
-    onScroll={stretchy.onScroll}
-    ListHeaderComponent={
-      <View
-        style={[
-          styles.foregroundContainer,
-          { height: imageHeight || stretchy.heightBasedOnRatio },
-        ]}>
-        {foreground}
-      </View>
-    }
-  />
+const StretchySectionList = React.forwardRef<
+  SectionList,
+  StretchySectionListProps<unknown>
+>(
+  (
+    { foreground, imageHeight, onScroll, stretchy, style, ...otherProps },
+    ref,
+  ) => (
+    <Animated.SectionList
+      {...otherProps}
+      ref={ref}
+      style={[style, styles.contentContainer]}
+      scrollEventThrottle={1}
+      onScroll={stretchy.onScroll}
+      ListHeaderComponent={
+        <View
+          style={[
+            styles.foregroundContainer,
+            { height: imageHeight || stretchy.heightBasedOnRatio },
+          ]}>
+          {foreground}
+        </View>
+      }
+    />
+  ),
 );
 
-export default WithStretchy<SectionListProps<any>>(StretchySectionList);
+export default WithStretchy<SectionList, SectionListProps<unknown>>(
+  StretchySectionList,
+);

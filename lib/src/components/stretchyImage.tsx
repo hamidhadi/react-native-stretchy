@@ -47,8 +47,7 @@ export const StretchyImage: React.FC<StretchyImageProps> = ({
       <AnimatedImageBackground
         source={image || {}}
         resizeMode={imageResizeMode}
-        style={[styles.animatedImageBackground, transformStyles]}
-      >
+        style={[styles.animatedImageBackground, transformStyles]}>
         {Boolean(imageForeground) && imageForeground}
       </AnimatedImageBackground>
     </View>
