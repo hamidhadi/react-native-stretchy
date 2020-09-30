@@ -31,7 +31,12 @@
     "react-native-animation",
     "scroll-animation",
     "scrollable-component",
-    "scrollable-animation"
+    "scrollable-animation",
+    "expo",
+    "expo-support",
+    "parallax",
+    "parallax-scrolling",
+    "parallax-scroll"
   ],
   "author": "Hamid Hadi <hamidhadi@live.com> (https://github.com/hamidhadi)",
   "license": "MIT",
