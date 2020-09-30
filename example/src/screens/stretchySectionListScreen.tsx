@@ -43,7 +43,7 @@ export const StretchySectionListScreen: React.FC<{}> = () => {
     <StretchySectionList
       image={require('../../asset/batman.jpg')}
       foreground={<Foreground />}
-      imageForeground={<Gradient />}
+      imageOverlay={<Gradient />}
       backgroundColor="#EFEFF4"
       renderSectionHeader={renderSectionHeader}
       renderItem={renderItem}

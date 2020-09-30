@@ -25,7 +25,7 @@ export const WithStretchy = <R, P>(
     const {
       backgroundColor,
       image,
-      imageForeground,
+      imageOverlay,
       imageHeight,
       imageWrapperStyle,
       imageResizeMode,
@@ -45,7 +45,7 @@ export const WithStretchy = <R, P>(
           imageWrapperStyle={imageWrapperStyle}
           animation={stretchy.animation}
           imageHeight={imageHeight || stretchy.heightBasedOnRatio}
-          imageForeground={imageForeground}
+          imageOverlay={imageOverlay}
           onLayout={stretchy.onImageWrapperLayout}
         />
         <WrappedComponent {...props} stretchy={stretchy} ref={ref} />

@@ -7,7 +7,7 @@ export const StretchyScrollViewScreen: React.FC<{}> = () => (
   <StretchyScrollView
     image={require('../../asset/batman.jpg')}
     foreground={<Foreground />}
-    imageForeground={<Gradient />}
+    imageOverlay={<Gradient />}
     backgroundColor="#EFEFF4">
     <Text style={{ padding: 10 }}>
       Batman is a fictional superhero appearing in American comic books

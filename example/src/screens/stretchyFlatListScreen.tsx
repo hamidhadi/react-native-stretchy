@@ -19,7 +19,7 @@ export const StretchyFlatListScreen: React.FC<ScreenProps> = () => {
     <StretchyFlatList
       image={require('../../asset/batman.jpg')}
       foreground={<Foreground />}
-      imageForeground={<Gradient />}
+      imageOverlay={<Gradient />}
       backgroundColor="#EFEFF4"
       data={photos}
       renderItem={renderItem}

@@ -1,6 +1,6 @@
 import * as ReactNative from 'react-native';
 
-export type StretchyImage = ReactNative.ImageSourcePropType
+export type StretchyImage = ReactNative.ImageSourcePropType;
 
 export type StretchyOnScroll = (
   position: number,
@@ -13,7 +13,7 @@ export interface StretchyProps {
   imageHeight?: number;
   imageResizeMode?: ReactNative.ImageResizeMode;
   imageWrapperStyle?: ReactNative.ViewStyle;
-  imageForeground?: React.ReactElement;
+  imageOverlay?: React.ReactElement;
   foreground?: React.ReactElement;
   onScroll?: StretchyOnScroll;
 }
