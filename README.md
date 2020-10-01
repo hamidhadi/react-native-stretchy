@@ -5,16 +5,15 @@
 ✅ Fully optimized for lists<br>
 ✅ Fully TypeScript support<br>
 ✅ Use native animation<br>
-❌ Expo Support
+✅ Expo Support
 
 ![StretchyBatman](/demo.gif)
 
 ## 🧐 Installation
-1. Install the package:
+
 ```bash
 npm install react-native-stretchy --save
 ```
-2. Link [react-native-linear-gradient][1] to your project.
 
 ## 🎓 Basic Usage
 
@@ -28,7 +27,6 @@ class SystretchyScrollView extends Component {
     return (
       <StretchyScrollView
         image={{ uri: 'https://example.com/myImageAddress' }}
-        gradient={{ colors: ['#000', 'transparent', '#000'] }}
         onScroll={(position, reachedToTheBottomOfHeader) =>
           console.log(position, reachedToTheBottomOfHeader)
         }>
@@ -42,7 +40,7 @@ class SystretchyScrollView extends Component {
 
 ## ℹ️ Properties
 
-These are default properties that is available for all stretchy components
+These are default properties for all stretchy components
 
 | Prop            |  Default  | Description                                                                                                                                                                                                |
 | --------------- | :-------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,7 +48,7 @@ These are default properties that is available for all stretchy components
 | image           |  `null`   | The image of the stretchy header ([RN image source][2])                                                                                                                                                    |
 | imageHeight     |  `null`   | Height of the stretchy header image (keep ratio of `image` if not provided)                                                                                                                                |
 | imageResizeMode | `'cover'` | ResizeMode of the stretchy header image. [You can use one of these values](https://facebook.github.io/react-native/docs/image.html#resizemode)                                                             |
-| gradient        |   null    | Gradient config object. See [LinearGradientProps][3]                                                                                                                                                       |
+| imageOverlay    |  `null`   | A RN Component for image overlay                                                                                                                                                                           |
 | foreground      |  `null`   | A RN Component for foreground content of background                                                                                                                                                        |
 | onScroll        |  `null`   | A callback function with these arguments:<br>`position`: current position of scroll<br>`reachedToTheBottomOfHeader`: boolean flag to specify whether the scroll has reached to the bottom of header or not |
 
@@ -83,7 +81,7 @@ To see all components in action you can run the Example project by following the
 4. Run `npm run start` or `yarn start` to start the RN packager and keep it open
 5. Open `example.xcworkspace` from `/example/ios` and run the project from `XCode`
 
-<i>NOTE: I changed the location of `iOS` and `Android` directories and even after specifying new locations on `react-native.config` we can't run the example project via RN cli. [See this issue][4]</i>
+<i>NOTE: I changed the location of `iOS` and `Android` directories and even after specifying new locations on `react-native.config` we can't run the example project via RN cli. [See this issue][3]</i>
 
 ## 🧩 Contribution
 
@@ -95,5 +93,4 @@ Licensed under the [MIT License](https://github.com/hamidhadi/react-native-stret
 
 [1]: https://github.com/react-native-community/react-native-linear-gradient
 [2]: https://facebook.github.io/react-native/docs/images.html
-[3]: https://github.com/react-native-community/react-native-linear-gradient/blob/master/index.d.ts
-[4]: https://github.com/react-native-community/cli/issues/1103
+[3]: https://github.com/react-native-community/cli/issues/1103

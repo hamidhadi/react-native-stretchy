@@ -1,7 +1,6 @@
 import * as ReactNative from 'react-native';
-import { LinearGradientProps } from 'react-native-linear-gradient';
 
-export type StretchyImage = ReactNative.ImageSourcePropType
+export type StretchyImage = ReactNative.ImageSourcePropType;
 
 export type StretchyOnScroll = (
   position: number,
@@ -14,16 +13,7 @@ export interface StretchyProps {
   imageHeight?: number;
   imageResizeMode?: ReactNative.ImageResizeMode;
   imageWrapperStyle?: ReactNative.ViewStyle;
+  imageOverlay?: React.ReactElement;
   foreground?: React.ReactElement;
   onScroll?: StretchyOnScroll;
-  gradient?: Pick<
-    LinearGradientProps,
-    | 'colors'
-    | 'start'
-    | 'end'
-    | 'locations'
-    | 'useAngle'
-    | 'angleCenter'
-    | 'angle'
-  >;
 }

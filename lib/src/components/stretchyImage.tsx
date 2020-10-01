@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { View, Animated, LayoutChangeEvent } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import { StretchyProps } from '../types';
 import { AnimatedImageBackground } from './animatedImageBackground';
 import { stretchyImageStyles as styles } from './styles';
@@ -14,11 +13,11 @@ export interface StretchyImageProps
 
 export const StretchyImage: React.FC<StretchyImageProps> = ({
   animation,
-  gradient,
   image,
   imageResizeMode,
   imageWrapperStyle,
   imageHeight,
+  imageOverlay,
   onLayout,
 }) => {
   const transformStyles = useMemo(
@@ -49,15 +48,7 @@ export const StretchyImage: React.FC<StretchyImageProps> = ({
         source={image || {}}
         resizeMode={imageResizeMode}
         style={[styles.animatedImageBackground, transformStyles]}>
-        {!!gradient && (
-          <LinearGradient
-            style={{ flex: 1 }}
-            colors={gradient.colors}
-            start={gradient.start}
-            end={gradient.end}
-            locations={gradient.locations}
-          />
-        )}
+        {Boolean(imageOverlay) && imageOverlay}
       </AnimatedImageBackground>
     </View>
   );

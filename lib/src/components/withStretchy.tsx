@@ -5,23 +5,27 @@ import { StretchyProps } from '../types';
 import { StretchyImage } from './stretchyImage';
 import { useStretchy, UseStretchyOutput } from '../hooks/useStretchy';
 
-export interface WithStretchyProps {
+export type PropsWithStretchy<P> = P & {
   stretchy: UseStretchyOutput;
-}
+};
 
 export type StretchyComponentProps<T> = StretchyProps &
   Omit<Animated.AnimatedProps<T>, 'onScroll'>;
 
-export const WithStretchy = <T extends {}>(
-  WrappedComponent: React.FC<
-    StretchyComponentProps<T> & WithStretchyProps
+export const WithStretchy = <R, P>(
+  WrappedComponent: React.ForwardRefExoticComponent<
+    React.PropsWithChildren<PropsWithStretchy<StretchyComponentProps<P>>> &
+      React.RefAttributes<R>
   >,
 ) => {
-  const EnhancedComponent: React.FC<StretchyComponentProps<T>> = (props) => {
+  const EnhancedComponent = React.forwardRef<
+    R,
+    React.PropsWithChildren<StretchyComponentProps<P>>
+  >((props, ref) => {
     const {
       backgroundColor,
-      gradient,
       image,
+      imageOverlay,
       imageHeight,
       imageWrapperStyle,
       imageResizeMode,
@@ -39,15 +43,15 @@ export const WithStretchy = <T extends {}>(
           image={image}
           imageResizeMode={imageResizeMode}
           imageWrapperStyle={imageWrapperStyle}
-          gradient={gradient}
           animation={stretchy.animation}
           imageHeight={imageHeight || stretchy.heightBasedOnRatio}
+          imageOverlay={imageOverlay}
           onLayout={stretchy.onImageWrapperLayout}
         />
-        <WrappedComponent stretchy={stretchy} {...props} />
+        <WrappedComponent {...props} stretchy={stretchy} ref={ref} />
       </View>
     );
-  };
+  });
 
   return EnhancedComponent;
 };

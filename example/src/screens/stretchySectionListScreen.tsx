@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { StretchySectionList } from '../../..';
-import { Foreground } from './components';
+import { Foreground, Gradient } from './components';
 import { photos, Photo } from '../stub';
 
 const renderSectionHeader = ({
@@ -43,18 +43,12 @@ export const StretchySectionListScreen: React.FC<{}> = () => {
     <StretchySectionList
       image={require('../../asset/batman.jpg')}
       foreground={<Foreground />}
+      imageOverlay={<Gradient />}
       backgroundColor="#EFEFF4"
       renderSectionHeader={renderSectionHeader}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
       sections={sections}
-      gradient={{
-        colors: [
-          'rgba(0, 0, 0, 0.9)',
-          'rgba(0, 0, 0, 0.5)',
-          'rgba(0, 0, 0, 0.9)',
-        ],
-      }}
     />
   );
 };

@@ -1,6 +1,6 @@
 {
   "name": "react-native-stretchy",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "A ReactNative scrollable stretchy header component",
   "main": "lib/dist/index.js",
   "typings": "lib/dist/index.d.ts",
@@ -31,7 +31,12 @@
     "react-native-animation",
     "scroll-animation",
     "scrollable-component",
-    "scrollable-animation"
+    "scrollable-animation",
+    "expo",
+    "expo-support",
+    "parallax",
+    "parallax-scrolling",
+    "parallax-scroll"
   ],
   "author": "Hamid Hadi <hamidhadi@live.com> (https://github.com/hamidhadi)",
   "license": "MIT",
@@ -39,9 +44,7 @@
     "url": "https://github.com/hamidhadi/react-native-stretchy/issues"
   },
   "homepage": "https://github.com/hamidhadi/react-native-stretchy#readme",
-  "dependencies": {
-    "react-native-linear-gradient": "^2.5.6"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^16.11.0",
     "react-native": ">=0.60.0"
@@ -62,6 +65,7 @@
     "metro-react-native-babel-preset": "^0.59.0",
     "react": "16.11.0",
     "react-native": "0.62.0",
+    "react-native-linear-gradient": "^2.5.6",
     "react-native-navigation": "^6.3.3",
     "react-test-renderer": "16.11.0",
     "typescript": "^3.8.3"

@@ -1,42 +1,41 @@
 import React from 'react';
-import { View, Animated, FlatListProps } from 'react-native';
+import { View, Animated, FlatListProps, FlatList } from 'react-native';
 import { commonStyles as styles } from './styles';
 import {
-  WithStretchyProps,
+  PropsWithStretchy,
   StretchyComponentProps,
   WithStretchy,
 } from './withStretchy';
 
-export type StretchyFlatListProps<ItemT> = WithStretchyProps &
-  StretchyComponentProps<FlatListProps<ItemT>>;
+export type StretchyFlatListProps<ItemT> = React.PropsWithChildren<
+  PropsWithStretchy<StretchyComponentProps<FlatListProps<ItemT>>>
+>;
 
-export type StretchyFlatListComponent = <ItemT>(
-  props: StretchyFlatListProps<ItemT>,
-) => JSX.Element;
-
-const StretchyFlatList: StretchyFlatListComponent = ({
-  foreground,
-  imageHeight,
-  onScroll,
-  stretchy,
-  style,
-  ...otherProps
-}) => (
-  <Animated.FlatList
-    {...otherProps}
-    style={[style, styles.contentContainer]}
-    scrollEventThrottle={1}
-    onScroll={stretchy.onScroll}
-    ListHeaderComponent={
-      <View
-        style={[
-          styles.foregroundContainer,
-          { height: imageHeight || stretchy.heightBasedOnRatio },
-        ]}>
-        {foreground}
-      </View>
-    }
-  />
+const StretchyFlatList = React.forwardRef<
+  FlatList,
+  StretchyFlatListProps<unknown>
+>(
+  (
+    { foreground, imageHeight, onScroll, stretchy, style, ...otherProps },
+    ref,
+  ) => (
+    <Animated.FlatList
+      {...otherProps}
+      ref={ref}
+      style={[style, styles.contentContainer]}
+      scrollEventThrottle={1}
+      onScroll={stretchy.onScroll}
+      ListHeaderComponent={
+        <View
+          style={[
+            styles.foregroundContainer,
+            { height: imageHeight || stretchy.heightBasedOnRatio },
+          ]}>
+          {foreground}
+        </View>
+      }
+    />
+  ),
 );
 
-export default WithStretchy<FlatListProps<any>>(StretchyFlatList);
+export default WithStretchy<FlatList, FlatListProps<unknown>>(StretchyFlatList);
