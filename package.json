@@ -64,7 +64,7 @@
     "jest": "^25.2.4",
     "metro-react-native-babel-preset": "^0.59.0",
     "react": "16.11.0",
-    "react-native": "0.62.0",
+    "react-native": "0.62.3",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-navigation": "^6.3.3",
     "react-test-renderer": "16.11.0",
