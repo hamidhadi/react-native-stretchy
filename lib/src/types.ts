@@ -1,6 +1,7 @@
 import * as ReactNative from 'react-native';
+import { FastImageProps } from 'react-native-fast-image';
 
-export type StretchyImage = ReactNative.ImageSourcePropType;
+export type StretchyImage = FastImageProps['source'];
 
 export type StretchyOnScroll = (
   position: number,
@@ -11,7 +12,7 @@ export interface StretchyProps {
   backgroundColor?: string;
   image?: StretchyImage;
   imageHeight?: number;
-  imageResizeMode?: ReactNative.ImageResizeMode;
+  imageResizeMode?: FastImageProps['resizeMode'];
   imageWrapperStyle?: ReactNative.ViewStyle;
   imageOverlay?: React.ReactElement;
   foreground?: React.ReactElement;

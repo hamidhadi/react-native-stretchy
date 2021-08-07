@@ -1,5 +1,5 @@
 import { Animated, ImageBackground } from 'react-native';
 
-export const AnimatedImageBackground = Animated.createAnimatedComponent(
+const AnimatedImageBackground = Animated.createAnimatedComponent(
   ImageBackground,
 );
