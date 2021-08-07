@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { View, Animated, LayoutChangeEvent } from 'react-native';
 import { StretchyProps } from '../types';
-import { AnimatedImageBackground } from './animatedImageBackground';
+import FastImage from 'react-native-fast-image'
 import { stretchyImageStyles as styles } from './styles';
 
 export interface StretchyImageProps
@@ -10,6 +10,7 @@ export interface StretchyImageProps
   imageHeight: number;
   onLayout(event: LayoutChangeEvent): void;
 }
+const AnimatedImageBackground = Animated.createAnimatedComponent(FastImage);
 
 export const StretchyImage: React.FC<StretchyImageProps> = ({
   animation,
