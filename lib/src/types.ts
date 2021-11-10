@@ -1,5 +1,5 @@
 import * as ReactNative from 'react-native';
-import { FastImageProps } from 'react-native-fast-image';
+import { FastImageProps } from 'react-native-fast-image2';
 
 export type StretchyImage = FastImageProps['source'];
 
